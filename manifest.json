@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "P!nkify",
+  "version": "0.1.0",
+  "description": "Make your site P!nker",
+  "icons": {
+    "16": "pink_16.png",
+    "48": "pink_48.png",
+    "128": "pink_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "pink_32.png",
+    "default_title": "Mac users: Cmd+Shift+M | PC users: Ctrl+M"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Ctrl+M",
+        "mac": "Command+Shift+M"
+      }
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
